@@ -22,20 +22,38 @@ function splitSentence(string) {
 // Desafio 4
 function concatName(array) {
   let resultado4 = '';
-  resultado4 = `${array[(array.length) - 1]}, ${array[0]}`;
+  resultado4 = `${array[array.length - 1]}, ${array[0]}`;
   return resultado4;
 }
 
 // Desafio 5
 function footballPoints(wins, ties) {
   let points = 0;
-  points = (wins * 3) + (ties * 1);
+  points = wins * 3 + ties * 1;
   return points;
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+
+function highestNumber(array) {
+  let highest = array[0];
+  for (let index1 = 1; index1 < array.length; index1 += 1) {
+    if (array[index1] >= highest) {
+      highest = array[index1];
+    }
+  }
+  return highest;
+}
+
+function highestCount(array) {
+  let countNumber = highestNumber(array);
+  let numberCount = 0;
+  for (let index2 = 0; index2 < array.length; index2 += 1) {
+    if (array[index2] === countNumber) {
+      numberCount += 1;
+    }
+  }
+  return numberCount;
 }
 
 // Desafio 7
