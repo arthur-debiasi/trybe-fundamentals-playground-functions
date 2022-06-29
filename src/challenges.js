@@ -228,9 +228,6 @@ function techList(array, string) {
   }
   return resultado;
 }
-let array = ['React', 'Jest', 'HTML', 'CSS', 'JavaScript'];
-let string = 'Lucas';
-console.log(techList(array, string));
 
 module.exports = {
   calcArea,
