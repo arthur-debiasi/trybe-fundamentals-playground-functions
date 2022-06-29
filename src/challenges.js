@@ -110,11 +110,85 @@ function fizzBuzz(numArray) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+
+function encodeA(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === 'a') { message += '1'; } else { message += iterator; }
+  }
+  return message;
 }
-function decode() {
-  // seu código aqui
+function encodeE(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === 'e') { message += '2'; } else { message += iterator; }
+  }
+  return message;
+}
+function encodeI(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === 'i') { message += '3'; } else { message += iterator; }
+  }
+  return message;
+}
+function encodeO(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === 'o') { message += '4'; } else { message += iterator; }
+  }
+  return message;
+}
+function encodeU(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === 'u') { message += '5'; } else { message += iterator; }
+  }
+  return message;
+}
+
+function encode(string) {
+  return encodeA(encodeE(encodeI(encodeO(encodeU(string)))));
+}
+
+function decodeA(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === '1') { message += 'a'; } else { message += iterator; }
+  }
+  return message;
+}
+function decodeE(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === '2') { message += 'e'; } else { message += iterator; }
+  }
+  return message;
+}
+function decodeI(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === '3') { message += 'i'; } else { message += iterator; }
+  }
+  return message;
+}
+function decodeO(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === '4') { message += 'o'; } else { message += iterator; }
+  }
+  return message;
+}
+function decodeU(string) {
+  let message = '';
+  for (let iterator of string) {
+    if (iterator === '5') { message += 'u'; } else { message += iterator; }
+  }
+  return message;
+}
+
+function decode(string) {
+  return decodeA(decodeE(decodeI(decodeO(decodeU(string)))));
 }
 
 // Desafio 10
