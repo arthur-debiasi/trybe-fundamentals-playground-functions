@@ -34,7 +34,6 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-
 function highestNumber(array) {
   let highest = array[0];
   for (let index1 = 1; index1 < array.length; index1 += 1) {
@@ -110,7 +109,6 @@ function fizzBuzz(numArray) {
 }
 
 // Desafio 9
-
 function encodeA(string) {
   let message = '';
   for (let iterator of string) {
@@ -192,9 +190,47 @@ function decode(string) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+/* Criei a função techToObject para receber uma tecnologia e um nome de pessoa
+para criar um objeto com os pares chave valor correspondentes */
+
+function techToObject(techno, person) {
+  let object = {};
+  object.tech = techno;
+  object.name = person;
+  return object;
 }
+
+/* Preciso criar uma função para ordenar o array em ordem alfabética,
+vou utilizar a função criada nos exercícios bônus do bloco 4.2 (bubble sort) */
+
+function bubbleSort(array) {
+  for (let i = 1; i < array.length; i += 1) {
+    for (let j = 0; j < i; j += 1) {
+      if (array[i] < array[j]) {
+        let lower = array[i];
+        array[i] = array[j];
+        array[j] = lower;
+      }
+    }
+  }
+  return array;
+}
+/* Agora posso criar a função techList (que retorna 'Vazio!' quando a propriedade lenght do array for zero)
+utilizando a função bubbleSort para ordenar a array em ordem alfabética, para então iterar a função
+ntechToObject para cada elemento da array.  */
+
+function techList(array, string) {
+  if (array.length === 0) { return 'Vazio!'; }
+  let resultado = [];
+  let ordered = bubbleSort(array);
+  for (let index = 0; index < ordered.length; index += 1) {
+    resultado[index] = techToObject(ordered[index], string);
+  }
+  return resultado;
+}
+let array = ['React', 'Jest', 'HTML', 'CSS', 'JavaScript'];
+let string = 'Lucas';
+console.log(techList(array, string));
 
 module.exports = {
   calcArea,
