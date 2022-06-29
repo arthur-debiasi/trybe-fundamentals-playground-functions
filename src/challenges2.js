@@ -102,8 +102,49 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+/* utilizar regular expression e .match(regExp) para procurar na string números de 1 a 9.
+depois verificar se o número é acompanhado de ' cervejas', reponder com a quantidade
+equivalente de copos d'água. */
+
+/* Primeiramente, crio uma função que procura globalmente em uma string pelos 
+ números de 1 a 9( /[1-9]/g ) */
+
+function drinkFinder(string) {
+  let regExp = /[1-9]/g;
+  let result = string.match(regExp);
+  return result;
+}
+
+/* Então, crio uma função para varrer uma array de strings e passar os strings para números */
+
+function stringToNum(array) {
+  let result = [];
+  for (let index = 0; index < array.length; index += 1) {
+    result[index] = parseInt(array[index], 10);
+  }
+  return result;
+}
+
+/* Então, crio uma função que varre uma array somando os elementos */
+
+function howMuch(array) {
+  let sum = 0;
+  for (const iterator of array) {
+    sum += iterator;
+  }
+  return sum;
+}
+
+/* Utilizando as funções anteriores para descobrir quantos copos de drinks foram consumidos,
+a função hydrate vai decidir qual mensagem retornar de acordo com essa quantidade de copos */
+
+function hydrate(string3) {
+  let input = howMuch(stringToNum(drinkFinder(string3)));
+  if (input === 1) {
+    return '1 copo de água';
+  }
+  let result = `${input} copos de água`;
+  return result;
 }
 
 module.exports = {
