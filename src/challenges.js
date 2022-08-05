@@ -73,15 +73,15 @@ console.log(fizzBuzzer(2));
 
 function fizzBuzz(numArray) {
   let message = [];
-  for (let index = 0; index < numArray.length; index += 1) {
+  for (const number of numArray) {
     switch (true) {
-    case fizzBuzzer(numArray[index]):
+    case fizzBuzzer(number):
       message.push('fizzBuzz');
       break;
-    case fizzer(numArray[index]):
+    case fizzer(number):
       message.push('fizz');
       break;
-    case buzzer(numArray[index]):
+    case buzzer(number):
       message.push('buzz');
       break;
     default:
