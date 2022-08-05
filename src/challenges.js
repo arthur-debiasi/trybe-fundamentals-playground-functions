@@ -20,16 +20,12 @@ function splitSentence(string) {
 
 // Desafio 4
 function concatName(array) {
-  let resultado4 = '';
-  resultado4 = `${array[array.length - 1]}, ${array[0]}`;
-  return resultado4;
+  return `${array[array.length - 1]}, ${array[0]}`;
 }
 
 // Desafio 5
 function footballPoints(wins, ties) {
-  let points = 0;
-  points = wins * 3 + ties * 1;
-  return points;
+  return wins * 3 + ties * 1;
 }
 
 // Desafio 6
