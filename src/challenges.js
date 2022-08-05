@@ -64,17 +64,24 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
+
+function fizzBuzzer(num) { return num % 3 === 0 && num % 5 === 0; }
+function fizzer(num) { return num % 3 === 0; }
+function buzzer(num) { return num % 5 === 0; }
+
+console.log(fizzBuzzer(2));
+
 function fizzBuzz(numArray) {
   let message = [];
   for (let index = 0; index < numArray.length; index += 1) {
     switch (true) {
-    case numArray[index] % 3 === 0 && numArray[index] % 5 === 0:
+    case fizzBuzzer(numArray[index]):
       message.push('fizzBuzz');
       break;
-    case numArray[index] % 3 === 0:
+    case fizzer(numArray[index]):
       message.push('fizz');
       break;
-    case numArray[index] % 5 === 0:
+    case buzzer(numArray[index]):
       message.push('buzz');
       break;
     default:
