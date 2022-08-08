@@ -93,112 +93,50 @@ function fizzBuzz(numArray) {
 }
 
 // Desafio 9
-function encodeA(string) {
+
+const encoder = (string, letter, code) => {
   let message = '';
   for (let iterator of string) {
-    if (iterator === 'a') { message += '1'; } else { message += iterator; }
+    if (iterator === letter) { message += code; } else { message += iterator; }
   }
   return message;
-}
-function encodeE(string) {
-  let message = '';
-  for (let iterator of string) {
-    if (iterator === 'e') { message += '2'; } else { message += iterator; }
-  }
-  return message;
-}
-function encodeI(string) {
-  let message = '';
-  for (let iterator of string) {
-    if (iterator === 'i') { message += '3'; } else { message += iterator; }
-  }
-  return message;
-}
-function encodeO(string) {
-  let message = '';
-  for (let iterator of string) {
-    if (iterator === 'o') { message += '4'; } else { message += iterator; }
-  }
-  return message;
-}
-function encodeU(string) {
-  let message = '';
-  for (let iterator of string) {
-    if (iterator === 'u') { message += '5'; } else { message += iterator; }
-  }
-  return message;
-}
+};
 
 function encode(string) {
-  return encodeA(encodeE(encodeI(encodeO(encodeU(string)))));
-}
-
-function decodeA(string) {
-  let message = '';
-  for (let iterator of string) {
-    if (iterator === '1') { message += 'a'; } else { message += iterator; }
-  }
-  return message;
-}
-function decodeE(string) {
-  let message = '';
-  for (let iterator of string) {
-    if (iterator === '2') { message += 'e'; } else { message += iterator; }
-  }
-  return message;
-}
-function decodeI(string) {
-  let message = '';
-  for (let iterator of string) {
-    if (iterator === '3') { message += 'i'; } else { message += iterator; }
-  }
-  return message;
-}
-function decodeO(string) {
-  let message = '';
-  for (let iterator of string) {
-    if (iterator === '4') { message += 'o'; } else { message += iterator; }
-  }
-  return message;
-}
-function decodeU(string) {
-  let message = '';
-  for (let iterator of string) {
-    if (iterator === '5') { message += 'u'; } else { message += iterator; }
-  }
-  return message;
+  const encoderIOU = encoder(encoder(encoder(string, 'u', '5'), 'o', '4'), 'i', '3');
+  return encoder(encoder(encoderIOU, 'e', '2'), 'a', '1');
 }
 
 function decode(string) {
-  return decodeA(decodeE(decodeI(decodeO(decodeU(string)))));
+  const decoderIOU = encoder(encoder(encoder(string, '5', 'u'), '4', 'o'), '3', 'i');
+  return encoder(encoder(decoderIOU, '2', 'e'), '1', 'a');
 }
 
 // Desafio 10
 /* Criei a função techToObject para receber uma tecnologia e um nome de pessoa
 para criar um objeto com os pares chave valor correspondentes */
 
-function techToObject(techno, person) {
-  let object = {};
-  object.tech = techno;
-  object.name = person;
+function techToObject(tech, name) {
+  let object = { tech, name };
   return object;
 }
 
 /* Preciso criar uma função para ordenar o array em ordem alfabética,
 vou utilizar a função criada nos exercícios bônus do bloco 4.2 (bubble sort) */
+// troquei o buuble sort pela HOF sort(), para diminuir complexidade.
 
-function bubbleSort(array) {
-  for (let i = 1; i < array.length; i += 1) {
-    for (let j = 0; j < i; j += 1) {
-      if (array[i] < array[j]) {
-        let lower = array[i];
-        array[i] = array[j];
-        array[j] = lower;
-      }
-    }
-  }
-  return array;
-}
+// function bubbleSort(array) {
+//   for (let i = 1; i < array.length; i += 1) {
+//     for (let j = 0; j < i; j += 1) {
+//       if (array[i] < array[j]) {
+//         let lower = array[i];
+//         array[i] = array[j];
+//         array[j] = lower;
+//       }
+//     }
+//   }
+//   return array;
+// }
 /* Agora posso criar a função techList (que retorna 'Vazio!' quando a propriedade lenght do array for zero)
 utilizando a função bubbleSort para ordenar a array em ordem alfabética, para então iterar a função
 ntechToObject para cada elemento da array.  */
@@ -206,7 +144,7 @@ ntechToObject para cada elemento da array.  */
 function techList(array, string) {
   if (array.length === 0) { return 'Vazio!'; }
   let resultado = [];
-  let ordered = bubbleSort(array);
+  let ordered = array.sort();
   for (let index = 0; index < ordered.length; index += 1) {
     resultado[index] = techToObject(ordered[index], string);
   }
