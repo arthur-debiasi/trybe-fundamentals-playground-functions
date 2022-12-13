@@ -1,5 +1,6 @@
 # 💻 Projeto Trybe - Playground Functions
 Resolução de 13 problemas com Javascript
+- [Link do Repositório](https://github.com/arthur-debiasi/fundamentals-playground-functions)
 
 # 📌 Habilidades
 
@@ -11,7 +12,7 @@ Resolução de 13 problemas com Javascript
 - Utilizar a lógica de programação na resolução de problemas;
 - Utilizar funções para organizar e estruturar o código.
 
-# 🤝 Requisitos Obrigatórios
+# 🤝 [Requisitos Obrigatórios](https://github.com/arthur-debiasi/fundamentals-playground-functions/blob/arthur-debiasi-sd-024-b-project-playground-functions/src/challenges.js)
 
 ## 1 - Crie uma função usando o operador &&
 
@@ -74,7 +75,7 @@ Implemente uma função que codifica e decodifica uma frase, trocando vogais por
 Implemente a função <code>techList</code> que recebe um array e uma string e retorna um array de objetos.
   </summary>
   
-# 🤝 Requisitos Bônus
+# 🤝 [Requisitos Bônus](https://github.com/arthur-debiasi/fundamentals-playground-functions/blob/arthur-debiasi-sd-024-b-project-playground-functions/src/challenges2.js)
 
 ## 11 - Crie uma função de número de telefone
 
