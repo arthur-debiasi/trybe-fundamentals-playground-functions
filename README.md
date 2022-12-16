@@ -1,6 +1,5 @@
-# 💻 Projeto Trybe - Playground Functions
+# 💻 Projeto [Trybe](https://www.betrybe.com/) - [Playground Functions](https://github.com/arthur-debiasi/fundamentals-playground-functions)
 Resolução de 13 problemas com Javascript
-- [Link do Repositório](https://github.com/arthur-debiasi/fundamentals-playground-functions)
 
 # 📌 Habilidades
 
